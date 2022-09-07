@@ -1,0 +1,36 @@
+// Layout
+//
+// Styles for managing the structural hierarchy of the site.
+
+$grey-color:       #828282 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark:  darken($grey-color, 25%) !default;
+
+$spacing-unit:     30px !default;
+
+.container {
+  max-width: 38rem;
+  padding-left:  1.5rem;
+  padding-right: 1.5rem;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+/**
+ * Site header
+ */
+header {
+  border-bottom: 1px solid $grey-color-light;
+  min-height: $spacing-unit * 1.865;
+
+  // Positioning context for the mobile navigation icon
+  position: relative;
+}
+
+footer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  border-top: 1px solid $grey-color-light;
+  padding: $spacing-unit 0;
+}
