@@ -19,16 +19,13 @@
 # in the templates via {{ site.myvariable }}.
 
 # Setup
-title:               Poole
+title:               Poligon Devlog
 tagline:             The Jekyll Butler
-url:                 http://getpoole.com
-paginate:            1
 baseurl:             ""
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+# description: >- # this means to ignore newlines until "baseurl:"
+#   Write an awesome description for your new site here. You can edit this
+#   line in _config.yml. It will appear in your document head meta (for
+#   Google search results) and in your feed.xml site description.
 
 # Build settings
 plugins:
@@ -45,15 +42,11 @@ sass:
   style:            compressed
 
 # About/contact
-author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+author:              Henry Bui
 
-# Custom vars
-version:             2.1.0
 github:
-  repo:              https://github.com/poole/poole
+  username:          endorpersand
+  repo:              https://github.com/endorpersand/poligon-lang
 
 # Gems
 gems:
