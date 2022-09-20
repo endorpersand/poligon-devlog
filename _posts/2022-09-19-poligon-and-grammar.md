@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Poligon's Grammar
+title: Poligon's Grammar (pt. 1)
 ---
 
 So, I wanted to talk about the language structure (or rather, just formalize my notes from 09/08-09/11), and also just discuss the name of the language.
@@ -342,7 +342,9 @@ shape Duck extends Animal {
     // ...
 }
 
-// implement: for every Duck, implement Animal. This means that there already will be a definition provided if a class fits Duck.
+// implement: for every Duck, implement Animal. 
+// This means that there already will be a definition provided 
+// if a class fits Duck.
 fit Duck to Animal {
     // ...
 }
@@ -395,7 +397,53 @@ measure cm of float {
 
 ## Union & Intersection Types
 
-TODO
+(This section was written: 09/20/2022)
+
+Heavily inspired by TypeScript.
+
+Let's say we have two types: `A`, `B`.
+These types are either classes, shapes, `unk`, `never`, a primitive, a collection, whatever.
+
+`A | B`: **Union type**
+
+- The object provided is either type `A` OR type `B`.
+
+`A & B`: **Intersect type**
+
+- The object provided is both type `A` and type `B`.
+
+Example:
+
+```ts
+let o: string | int = 14;
+o = "14";
+
+shape Vector2 {
+    x: float,
+    y: float
+}
+shape PolarVector2 {
+    r: float,
+    theta: float
+}
+
+let a: Vector2 & PolarVector2 = #{
+    x: 3,
+    y: 4,
+    r: 5,
+    theta: 0.927295218
+};
+```
+
+Note that:
+
+```ts
+A | unk   = unk
+A | never = A
+
+A & unk   = A
+A & never = never
+```
 
 # Naming
 
