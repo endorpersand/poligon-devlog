@@ -73,7 +73,7 @@ fun_params = ( ("mut")? ident (":" ty)? ),* ;
 
 ty = ident ("<" (ty),+ ">")? ;
 
-literal = string | numeric | bool ;
+literal = char | string | numeric | bool ;
 numeric = 
     | [0-9]+
     | [0-9]+.[0-9]* ;
