@@ -55,6 +55,8 @@ So, I'll just label how I want to do grammar now:
 
 I'm following [Crafting Interpreters section 6.1](https://craftinginterpreters.com/parsing-expressions.html#ambiguity-and-the-parsing-game) + [Python's grammar specification](https://docs.python.org/3/reference/grammar.html) for this tree.
 
+(last modified: 09-23-2022)
+
 ```ebnf
 program = ( statement ";" )* ; /* must have trailing ; */
 block = "{" program "}" ;
@@ -94,22 +96,19 @@ unit =
 path = /* a chain of calls: a.b.c.d::e.f.g */
     | unit ( ("."|"::") ident )* ;
 call = path ( "(" ( expression ),* ")" )? ;
-unary =
-    | ("!"|"~"|"-") unary
-    | call ;
+unary = ("!"|"~"|"-")* call ;
 muldiv = unary ( ("*"|"/"|"%") unary )* ;
 addsub = muldiv ( ("+"|"-") muldiv )* ;
 shift  = addsub ( ("<<"|">>") addsub )* ;
 band   = shift ( "&" shift )* ;
 bxor   = band ( "^" band )* ;
 bor    = bxor ( "|" bxor )* ;
-range  = bor ( ".." bor )? ;
+range  = bor ( ".." bor ("step" bor)? )? ;
 spread = ("..")? range ;
 comparison = spread ( cmp_op spread ( cmp_op spread )? )? ;
 land   =  comparison ( "&&" comparison )* ;
 lor    =  land ( "||" land )* ;
-assignment = ( ident ("="|asg_op) )? assignment 
-    | lor;
+assignment = ( ident ("="|asg_op) )* lor ;
 expression = assignment
 
 cmp_op = "<"|"<="|"=="|"!="|">="|">"
