@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Research: CI Bytecode
+title: Research - CI Bytecode
 ---
 This is a summary document of [Crafting Interpreters: 14 - Chunks of Bytecode](https://craftinginterpreters.com/chunks-of-bytecode.html)
 

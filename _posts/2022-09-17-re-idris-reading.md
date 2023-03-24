@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Research: Idris Reading
+title: Research - Idris Reading
 ---
 
 So, on the 11th (around a week ago, oops), I read this journal article: [Idris, a general-purpose dependently typed programming language: Design and implementation](https://doi.org/10.1017/S095679681300018X), which studied Idris, a language that's meant to be like Haskell but with *dependent types*.

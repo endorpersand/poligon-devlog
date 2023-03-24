@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Research: C and the Wacky World of Strings
+title: Research - C and the Wacky World of Strings
 ---
 
 I need to document the messiness of strings in C, because much of LLVM's API involves strings (woohoo).
